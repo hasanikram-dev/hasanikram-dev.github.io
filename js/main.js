@@ -238,16 +238,16 @@
 			var sLoader = $('#submit-loader');
 
 			// ✅ Check if reCAPTCHA is completed
-			// var recaptchaResponse = grecaptcha.getResponse();
-			// if (recaptchaResponse.length === 0) {
-			// 	$('#message-warning').html("Please complete the reCAPTCHA.").fadeIn();
-			// 	return false;
-			// }
+			var recaptchaResponse = grecaptcha.getResponse();
+			if (recaptchaResponse.length === 0) {
+				$('#message-warning').html("Please complete the reCAPTCHA.").fadeIn();
+				return false;
+			}
 
 			$.ajax({      	
 
 		      type: "POST",
-		      url: "https://hasanikram.fwh.is/inc/sendEmail.php",
+		      url: "inc/sendEmail.php",
 		      data: $(form).serialize(),
 		      beforeSend: function() { 
 				$('#message-warning').hide();
