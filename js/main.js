@@ -247,7 +247,7 @@
 			$.ajax({      	
 
 		      type: "POST",
-		      url: "inc/sendEmail.php",
+		      url: "https://hasanikram.fwh.is/inc/sendEmail.php",
 		      data: $(form).serialize(),
 		      beforeSend: function() { 
 				$('#message-warning').hide();
